@@ -1,16 +1,35 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
 
 <title>Calculator</title><meta charset="utf-8">
-
+<style>
+	body{
+		width:600px;
+		margin:0 auto;
+		background: grey;
+		color: #fff;
+	}
+	input,
+	button,
+	label{
+		display: block;
+		margin-top:10px;
+	}
+</style>
 <script type="text/javascript">
 
 function cube() {
-
-var num = document.getElementById("n1");
-
-num.value = Math.pow(num.value, 3);
-
+   var num = document.getElementById("n1");
+   var resultado = document.querySelector("#resultado");
+   resultado.value = Math.pow(num.value, 3);
 }
+function elevadoACuatro() {
+   var num = document.getElementById("n1");
+   var resultado = document.querySelector("#resultado");
+   resultado.value = Math.pow(num.value, 4);
+}
+
 function sin() {
 
 var num = document.getElementById("n1");
@@ -25,12 +44,20 @@ console.log(num.value)
 
 <body>
 <h1>Calculadora de Juan A. Reina</h1>
-Number:
 
-<input type="text" id="n1"><p>
+	<label>NÚMERO</label>
+    <input type="text" id="n1">
 
 <button onclick="cube()"> x^3 </button>
+
 <button onclick="sin()"> sin(x) </button>
+
+<button onclick="elevadoACuatro()"> x^4 </button>
+
+    <label>RESULTADO</label>
+    <input type="text" name="resultado" id="resultado">
+
+
 </body>
 
 </html>
